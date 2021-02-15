@@ -27,7 +27,9 @@ public class BlobEntityModel extends EntityModel<BlobEntity> {
 
     @Override
     public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-		
+
+        matrixStack.scale(2.0F, 2.0F, 2.0F);
+        matrixStack.translate(0, -0.75F, 0);
 		bb_main.render(matrixStack, buffer, packedLight, packedOverlay);
     }
 

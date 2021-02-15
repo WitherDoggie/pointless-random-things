@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "rpt:block/squish_block" }
+  }
+}

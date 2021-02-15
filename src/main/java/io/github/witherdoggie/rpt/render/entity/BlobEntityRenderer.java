@@ -15,6 +15,6 @@ public class BlobEntityRenderer extends MobEntityRenderer<BlobEntity, BlobEntity
 
     @Override
     public Identifier getTexture(BlobEntity entity) {
-        return new Identifier("entityblob", "textures/entity/blob/blob.png");
+        return new Identifier("rpt", "textures/entity/blob/blob.png");
     }
 }
