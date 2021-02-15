@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "io.github.witherdoggie.rpt.RandomPointlessThings"
+    ],
+    "client": [
+      "io.github.witherdoggie.rpt.RandomPointlessThingsClient"
     ]
   },
   "mixins": [
