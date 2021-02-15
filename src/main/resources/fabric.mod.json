@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "random-pointless-things",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Random Pointless Things",
+  "description": "Adds things to Minecraft that aren't needed and have no practical usage",
   "authors": [
     "Me!"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/WitherDoggie/pointless-random-things",
+    "sources": "https://github.com/WitherDoggie/pointless-random-things"
   },
 
-  "license": "CC0-1.0",
+  "license": "GPL-3.0",
   "icon": "assets/modid/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "io.github.witherdoggie.rpt.RandomPointlessThings"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "random-pointless-things.mixins.json"
   ],
 
   "depends": {

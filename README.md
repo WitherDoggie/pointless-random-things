@@ -1,9 +1,7 @@
-# Fabric Example Mod
+# Random Pointless Things
 
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+If you expect anything in this mod to make sense, you are sadly mistaken. Now watch out for Blob behind you.
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Licensed under a GLP-3.0 license.
