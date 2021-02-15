@@ -4,4 +4,4 @@ If you expect anything in this mod to make sense, you are sadly mistaken. Now wa
 
 ## License
 
-Licensed under a GLP-3.0 license.
+Licensed under a GPL-3.0 license.
