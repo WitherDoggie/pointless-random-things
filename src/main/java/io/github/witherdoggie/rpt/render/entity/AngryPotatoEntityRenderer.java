@@ -6,7 +6,13 @@ import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
 
+import java.util.Random;
+
 public class AngryPotatoEntityRenderer extends MobEntityRenderer<AngryPotatoEntity, AngryPotatoEntityModel> {
+
+    private static final Identifier BROWN = new Identifier("rpt", "textures/entity/angrypotato/angry_potato.png");
+    private static final Identifier AQUA = new Identifier("rpt", "textures/entity/angrypotato/angry_potato_aqua.png");
+    private static final Identifier NEON_GREEN = new Identifier("rpt", "textures/entity/angrypotato/angry_potato_neon_green.png");
 
     public AngryPotatoEntityRenderer(EntityRenderDispatcher entityRenderDispatcher) {
         super(entityRenderDispatcher, new AngryPotatoEntityModel(), 0.1f);
@@ -14,6 +20,14 @@ public class AngryPotatoEntityRenderer extends MobEntityRenderer<AngryPotatoEnti
 
     @Override
     public Identifier getTexture(AngryPotatoEntity entity) {
-        return new Identifier("rpt", "textures/entity/angrypotato/angry_potato.png");
+        switch (entity.getPotatoType()){
+            case 0:
+            default:
+                return BROWN;
+            case 1:
+                return AQUA;
+            case 2:
+                return NEON_GREEN;
+        }
     }
 }

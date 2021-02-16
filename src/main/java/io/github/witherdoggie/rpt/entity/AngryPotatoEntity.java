@@ -1,18 +1,32 @@
 package io.github.witherdoggie.rpt.entity;
 
+import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.passive.CatEntity;
-import net.minecraft.entity.passive.OcelotEntity;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
-public class AngryPotatoEntity extends HostileEntity {
+import java.util.Random;
 
-    protected AngryPotatoEntity(EntityType<? extends HostileEntity> entityType, World world) {
+public class AngryPotatoEntity extends AnimalEntity {
+
+    private static TrackedData<Integer> POTATO_TYPE;
+
+    protected AngryPotatoEntity(EntityType<? extends AngryPotatoEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -29,5 +43,66 @@ public class AngryPotatoEntity extends HostileEntity {
 
     public static DefaultAttributeContainer.Builder createAngryPotatoAttributes() {
         return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
+    }
+
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(POTATO_TYPE, 0);
+    }
+
+    @Nullable
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable CompoundTag entityTag) {
+        int i = this.chooseType();
+
+        if (entityData instanceof AngryPotatoEntity.PotatoData) {
+            i = ((AngryPotatoEntity.PotatoData)entityData).type;
+        } else {
+            entityData = new AngryPotatoEntity.PotatoData(i);
+        }
+
+        this.setPotatoType(i);
+        return super.initialize(world, difficulty, spawnReason, (EntityData)entityData, entityTag);
+    }
+
+    @Nullable
+    @Override
+    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
+        return null;
+    }
+
+    private int chooseType(){
+        Random rand = new Random();
+        return rand.nextInt(3);
+    }
+
+    public void setPotatoType(int potatoType) {
+        this.dataTracker.set(POTATO_TYPE, potatoType);
+    }
+
+    public int getPotatoType() {
+        return this.dataTracker.get(POTATO_TYPE);
+    }
+
+    public void writeCustomDataToTag(CompoundTag tag) {
+        super.writeCustomDataToTag(tag);
+        tag.putInt("PotatoType", this.getPotatoType());
+    }
+
+    public void readCustomDataFromTag(CompoundTag tag) {
+        super.readCustomDataFromTag(tag);
+        this.setPotatoType(tag.getInt("PotatoType"));
+    }
+
+    static {
+        POTATO_TYPE = DataTracker.registerData(AngryPotatoEntity.class, TrackedDataHandlerRegistry.INTEGER);
+    }
+
+    public static class PotatoData extends PassiveEntity.PassiveData {
+        public final int type;
+
+        public PotatoData(int type) {
+            super(1.0F);
+            this.type = type;
+        }
     }
 }

@@ -8,7 +8,6 @@ import net.minecraft.util.Identifier;
 
 public class BlobEntityRenderer extends MobEntityRenderer<BlobEntity, BlobEntityModel> {
 
-
     public BlobEntityRenderer(EntityRenderDispatcher entityRenderDispatcher) {
         super(entityRenderDispatcher, new BlobEntityModel(), 0.5f);
     }
