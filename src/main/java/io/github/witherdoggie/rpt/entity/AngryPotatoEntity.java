@@ -72,7 +72,7 @@ public class AngryPotatoEntity extends AnimalEntity {
 
     private int chooseType(){
         Random rand = new Random();
-        return rand.nextInt(3);
+        return rand.nextInt(9);
     }
 
     public void setPotatoType(int potatoType) {
