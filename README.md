@@ -8,6 +8,13 @@ Current "feature" list:
   - Potato Ore
   - Wood Walls
   - Big Acacia Buttons
+  - Waffles
+  - Broken item models because I'm to lazy to fix them
+  - Blocks that squish when you click them
+  - A Food that gives a random effect when eaten
+
+Planned Features:
+- Whatever random idea pops into my head
 
 ## License
 
