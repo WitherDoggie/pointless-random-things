@@ -10,6 +10,11 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+repositories {
+	maven { url 'https://repo.repsy.io/mvn/gandiber/geckolib' }
+}
+
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -18,6 +23,7 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation 'software.bernie.geckolib:fabric-1.16.5-geckolib:3.0.13:dev'
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
@@ -77,6 +83,6 @@ publishing {
 	// Select the repositories you want to publish to
 	// To publish to maven local, no extra repositories are necessary. Just use the task `publishToMavenLocal`.
 	repositories {
-		// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+		// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.maven { url 'https://repo.repsy.io/mvn/gandiber/geckolib' }
 	}
 }

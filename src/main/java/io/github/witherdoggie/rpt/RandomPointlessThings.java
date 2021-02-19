@@ -7,6 +7,8 @@ import net.fabricmc.api.ModInitializer;
 
 public class RandomPointlessThings implements ModInitializer {
 
+    public static String MODID = "rpt";
+
     @Override
     public void onInitialize() {
 

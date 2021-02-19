@@ -3,5 +3,14 @@
   "entity.rpt.blob": "Blob",
   "entity.rpt.angry_potato": "Angry Potato",
   "block.rpt.potato_ore": "Potatore",
-  "item.rpt.waffle": "Waffle"
+  "item.rpt.waffle": "Waffle",
+  "block.rpt.oak_wood_pane": "Oak Wooden Panel",
+  "block.rpt.birch_wood_pane": "Birch Wooden Panel",
+  "block.rpt.spruce_wood_pane": "Spruce Wooden Panel",
+  "block.rpt.jungle_wood_pane": "Jungle Wooden Panel",
+  "block.rpt.dark_oak_wood_pane": "Dark Oak Wooden Panel",
+  "block.rpt.acacia_wood_pane": "Acacia Wooden Panel",
+  "block.rpt.warped_wood_pane": "Warped Wooden Panel",
+  "block.rpt.crimson_wood_pane": "Crimson Wooden Panel",
+  "block.rpt.dirt_slab": "Dirt Slab"
 }

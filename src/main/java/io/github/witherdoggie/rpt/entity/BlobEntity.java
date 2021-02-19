@@ -39,6 +39,6 @@ public class BlobEntity extends AnimalEntity {
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return null;///(BlobEntity)EntityType.BLOB.create(world);
+        return EntityRegistry.BLOB.create(world);
     }
 }
