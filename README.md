@@ -4,6 +4,7 @@ If you expect anything in this mod to make sense, you are sadly mistaken. Now wa
 
 Current "feature" list:
   - Blob
+  - King Blob
   - Angry Potato
   - Potato Ore
   - Wood Walls
