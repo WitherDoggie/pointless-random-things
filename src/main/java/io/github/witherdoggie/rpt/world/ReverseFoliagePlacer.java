@@ -2,8 +2,10 @@ package io.github.witherdoggie.rpt.world;
 
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.ModifiableTestableWorld;
 import net.minecraft.world.gen.UniformIntDistribution;
+import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
@@ -33,5 +35,24 @@ public abstract class ReverseFoliagePlacer extends FoliagePlacer {
     @Override
     protected boolean isInvalidForLeaves(Random random, int baseHeight, int dx, int y, int dz, boolean giantTrunk) {
         return false;
+    }
+
+    @Override
+    protected void generateSquare(ModifiableTestableWorld world, Random random, TreeFeatureConfig config, BlockPos pos, int radius, Set<BlockPos> leaves, int y, boolean giantTrunk, BlockBox box) {
+        int i = giantTrunk ? 1 : 0;
+        BlockPos.Mutable mutable = new BlockPos.Mutable();
+
+        for (int j = -radius; j <= radius + i; ++j) {
+            for (int k = -radius; k <= radius + i; ++k) {
+                if (!this.isPositionInvalid(random, j, y, k, radius, giantTrunk)) {
+                    mutable.set((Vec3i) pos, j, y, k);
+                    if (TreeFeature.canReplace(world, mutable)) {
+                        world.setBlockState(mutable, config.leavesProvider.getBlockState(random, mutable), 19);
+                        box.encompass(new BlockBox(mutable, mutable));
+                        leaves.add(mutable.toImmutable());
+                    }
+                }
+            }
+        }
     }
 }

@@ -42,7 +42,7 @@ public class AngryPotatoEntity extends AnimalEntity {
     }
 
     public static DefaultAttributeContainer.Builder createAngryPotatoAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.40D);
     }
 
     protected void initDataTracker() {

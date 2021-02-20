@@ -1,6 +1,7 @@
 package io.github.witherdoggie.rpt.mixins;
 
 import io.github.witherdoggie.rpt.item.ItemRegistry;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
