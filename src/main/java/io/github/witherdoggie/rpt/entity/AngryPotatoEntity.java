@@ -2,6 +2,7 @@ package io.github.witherdoggie.rpt.entity;
 
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -13,6 +14,8 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.LocalDifficulty;
@@ -50,6 +53,12 @@ public class AngryPotatoEntity extends AnimalEntity {
         this.dataTracker.startTracking(POTATO_TYPE, 0);
     }
 
+    @Override
+    protected void initEquipment(LocalDifficulty difficulty) {
+        System.out.println("TEST");
+        this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
+    }
+
     @Nullable
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable CompoundTag entityTag) {
         int i = this.chooseType();
@@ -61,6 +70,7 @@ public class AngryPotatoEntity extends AnimalEntity {
         }
 
         this.setPotatoType(i);
+        this.initEquipment(difficulty);
         return super.initialize(world, difficulty, spawnReason, (EntityData)entityData, entityTag);
     }
 
