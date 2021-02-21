@@ -14,6 +14,7 @@ Current "feature" list:
   - Broken item models because I'm to lazy to fix them
   - Blocks that squish when you click them
   - A Food that gives a random effect when eaten
+  - Endermen and Pig models are now cursed
 
 Planned Features:
 - Whatever random idea pops into my head
