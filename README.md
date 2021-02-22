@@ -15,6 +15,9 @@ Current "feature" list:
   - Blocks that squish when you click them
   - A Food that gives a random effect when eaten
   - Endermen and Pig models are now cursed
+  - Chicken and Pigs are massive
+  - Creepers from spawn eggs don't do block damage
+  - Chaos
 
 Planned Features:
 - Whatever random idea pops into my head
