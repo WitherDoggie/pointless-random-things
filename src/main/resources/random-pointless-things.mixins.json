@@ -6,7 +6,12 @@
   "mixins": [
     "LivingEntityMixin",
     "PigModelMixin",
-    "EndermanEntityModelMixin"
+    "EndermanEntityModelMixin",
+    "EntityTypeMixin",
+    "AnimalModelMixin",
+    "ChickenModelMixin",
+    "CreeperEntityMixin",
+    "GiantEntityModelMixin"
   ],
   "client": [
   ],
