@@ -4,10 +4,7 @@ import io.github.witherdoggie.rpt.RandomPointlessThings;
 import io.github.witherdoggie.rpt.util.WoodType;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
-import net.minecraft.block.SlabBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -20,6 +17,7 @@ public class BlockRegistry {
     public static final SquishBlock SQUISH_BLOCK = new SquishBlock(AbstractBlock.Settings.of(Material.ORGANIC_PRODUCT, MaterialColor.LIME).sounds(BlockSoundGroup.SLIME));
     public static final PotatoOre POTATO_ORE = new PotatoOre(FabricBlockSettings.of(Material.STONE, MaterialColor.STONE).sounds(BlockSoundGroup.STONE)
             .requiresTool().strength(3.0f, 3.0f).breakByTool(FabricToolTags.PICKAXES, 0));
+    public static final PillarBlock LOG = new PillarBlock(AbstractBlock.Settings.of(Material.AGGREGATE, MaterialColor.LIME).sounds(BlockSoundGroup.WOOD));
     public static final BigWoodenButton BIG_ACACIA_BUTTON = new BigWoodenButton(FabricBlockSettings.of(Material.SUPPORTED).noCollision().strength(0.5f));
     public static final WoodPaneBlock OAK_PANE = new WoodPaneBlock(WoodType.OAK, AbstractBlock.Settings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final WoodPaneBlock BIRCH_PANE = new WoodPaneBlock(WoodType.BIRCH, AbstractBlock.Settings.of(Material.WOOD).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
@@ -33,6 +31,9 @@ public class BlockRegistry {
     public static final SlabBlock DIRT_SLAB = new SlabBlock(AbstractBlock.Settings.of(Material.SOIL, MaterialColor.DIRT).strength(0.5f).sounds(BlockSoundGroup.GRAVEL));
 
     public static void initializeBlocks(){
+
+        Registry.register(Registry.BLOCK, new Identifier(RandomPointlessThings.MODID, "log"), LOG);
+        Registry.register(Registry.ITEM, new Identifier(RandomPointlessThings.MODID,"log"), new BlockItem(LOG, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
         Registry.register(Registry.BLOCK, new Identifier(RandomPointlessThings.MODID, "squish_block"), SQUISH_BLOCK);
         Registry.register(Registry.ITEM, new Identifier(RandomPointlessThings.MODID,"squish_block"), new BlockItem(SQUISH_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));

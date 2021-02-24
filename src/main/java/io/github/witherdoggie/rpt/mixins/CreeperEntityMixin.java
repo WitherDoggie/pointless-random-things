@@ -3,10 +3,15 @@ package io.github.witherdoggie.rpt.mixins;
 
 import io.github.witherdoggie.rpt.accessors.CreeperEntityInterface;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.control.FlightMoveControl;
+import net.minecraft.entity.ai.pathing.BirdNavigation;
+import net.minecraft.entity.attribute.DefaultAttributeContainer;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.CreeperEntity;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.World;
@@ -16,6 +21,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @Mixin(CreeperEntity.class)
@@ -25,6 +31,18 @@ public class CreeperEntityMixin extends MobEntity implements CreeperEntityInterf
 
     protected CreeperEntityMixin(EntityType<? extends MobEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    @Inject(method = "<init>", at = @At("TAIL"))
+    private void addFlight(EntityType<? extends CreeperEntity> entityType, World world, CallbackInfo ci){
+
+        this.moveControl = new FlightMoveControl(this, 100, true);
+        this.navigation = new BirdNavigation(this, world);
+    }
+
+    @Inject(method = "createCreeperAttributes", at = @At("RETURN"))
+    private static void createCreeperAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> cir) {
+        cir.getReturnValue().add(EntityAttributes.GENERIC_FLYING_SPEED, 20.0);
     }
 
     @Inject(method = "<clinit>", at = @At("TAIL"))
