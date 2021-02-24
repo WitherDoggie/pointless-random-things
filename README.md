@@ -17,6 +17,11 @@ Current "feature" list:
   - Endermen and Pig models are now cursed
   - Chicken and Pigs are massive
   - Creepers from spawn eggs don't do block damage
+  - Creepers can fly
+  - Grass now burns you
+  - Cacti are very deadly
+  - Bees are massive
+  - Removed invulnerability in creative mode
   - Chaos
 
 Planned Features:
