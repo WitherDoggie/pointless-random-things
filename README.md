@@ -50,6 +50,12 @@ Why is this mod terrible?
 Does it do X?
 - Yes, but invisibly
 
+Is it causing my game to crash?
+- Good
+
+Send help?
+- Not a chance
+
 ## License
 
 Licensed under a GPL-3.0 license.
