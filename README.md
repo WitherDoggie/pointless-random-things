@@ -47,6 +47,9 @@ Will you make it compatible with X mod?
 Why is this mod terrible?
 - why not?
 
+Does it do X?
+- Yes, but invisibly
+
 ## License
 
 Licensed under a GPL-3.0 license.
