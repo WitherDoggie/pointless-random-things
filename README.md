@@ -31,7 +31,7 @@ Current "feature" list:
 Planned Features:
 - Whatever random idea pops into my head
 
-Requires GeckoLib: https://www.curseforge.com/minecraft/mc-mods/geckolib/files
+Requires GeckoLib: https://www.curseforge.com/minecraft/mc-mods/geckolib-fabric
 
 ## License
 
