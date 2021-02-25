@@ -22,6 +22,10 @@ Current "feature" list:
   - Cacti are very deadly
   - Bees are massive
   - Removed invulnerability in creative mode
+  - Piglins are invisible
+  - Enderpearls mean certain death
+  - The Ender Dragon is invulnerable
+  - Don't touchy the pufferfishy  
   - Chaos
 
 Planned Features:
