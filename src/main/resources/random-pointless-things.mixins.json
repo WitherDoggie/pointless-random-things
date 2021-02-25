@@ -20,7 +20,11 @@
     "CactusBlockMixin",
     "AbstractBlockStateMixin",
     "PlayerAbilitiesMixin",
-    "EnderDragonEntityMixin"
+    "EnderDragonEntityMixin",
+    "EndermenEntityMixin",
+    "PufferfishEntityMixin",
+    "EnderPearlEntityMixin",
+    "PiglinEntityMixin"
   ],
   "client": [
   ],

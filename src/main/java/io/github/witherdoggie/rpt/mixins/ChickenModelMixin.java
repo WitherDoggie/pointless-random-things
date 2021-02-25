@@ -12,7 +12,6 @@ public class ChickenModelMixin extends AnimalModelMixin{
 
     @Override
     protected void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha, CallbackInfo callbackInfo){
-        //matrices.translate(0.0, -12.5, 0.0);
         matrices.multiply(Vector3f.POSITIVE_Z.getDegreesQuaternion(90));
         matrices.scale(10.0f, 10.0f, 10.0f);
     }

@@ -36,13 +36,13 @@ public class CreeperEntityMixin extends MobEntity implements CreeperEntityInterf
     @Inject(method = "<init>", at = @At("TAIL"))
     private void addFlight(EntityType<? extends CreeperEntity> entityType, World world, CallbackInfo ci){
 
-        this.moveControl = new FlightMoveControl(this, 100, true);
+        this.moveControl = new FlightMoveControl(this, 20, true);
         this.navigation = new BirdNavigation(this, world);
     }
 
     @Inject(method = "createCreeperAttributes", at = @At("RETURN"))
     private static void createCreeperAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> cir) {
-        cir.getReturnValue().add(EntityAttributes.GENERIC_FLYING_SPEED, 20.0);
+        cir.getReturnValue().add(EntityAttributes.GENERIC_FLYING_SPEED, 30.0);
     }
 
     @Inject(method = "<clinit>", at = @At("TAIL"))
