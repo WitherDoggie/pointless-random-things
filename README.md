@@ -33,6 +33,20 @@ Planned Features:
 
 Requires GeckoLib: https://www.curseforge.com/minecraft/mc-mods/geckolib-fabric
 
+#F.A.Q:
+
+Will you release a forge version?  
+- No
+
+Is this compatible with X mod?
+- idk, try it
+
+Will you make it compatible with X mod?
+- Absolutely not
+
+Why is this mod terrible?
+- why not?
+
 ## License
 
 Licensed under a GPL-3.0 license.
