@@ -9,7 +9,6 @@
     "EndermanEntityModelMixin",
     "EntityTypeMixin",
     "AnimalModelMixin",
-    "ChickenModelMixin",
     "CreeperEntityMixin",
     "GiantEntityModelMixin",
     "BeeEntityModelMixin",
@@ -24,7 +23,8 @@
     "EndermenEntityMixin",
     "PufferfishEntityMixin",
     "EnderPearlEntityMixin",
-    "PiglinEntityMixin"
+    "PiglinEntityMixin",
+    "ChickenEntityMixin"
   ],
   "client": [
   ],
