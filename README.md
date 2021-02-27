@@ -25,7 +25,8 @@ Current "feature" list:
   - Piglins are invisible
   - Enderpearls mean certain death
   - The Ender Dragon is invulnerable
-  - Don't touchy the pufferfishy  
+  - Don't touchy the pufferfishy
+  - Chickens go boom now  
   - Chaos
 
 Planned Features:
