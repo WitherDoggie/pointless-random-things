@@ -24,7 +24,8 @@
     "PufferfishEntityMixin",
     "EnderPearlEntityMixin",
     "PiglinEntityMixin",
-    "ChickenEntityMixin"
+    "ChickenEntityMixin",
+    "ShulkerEntityMixin"
   ],
   "client": [
   ],

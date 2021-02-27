@@ -1,7 +1,7 @@
 package io.github.witherdoggie.rpt.mixins;
 
 import io.github.witherdoggie.rpt.accessors.ChickenEntityInterface;
-import io.github.witherdoggie.rpt.render.entity.goal.ChickenIgniteGoal;
+import io.github.witherdoggie.rpt.entity.goal.ChickenIgniteGoal;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.FollowTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;

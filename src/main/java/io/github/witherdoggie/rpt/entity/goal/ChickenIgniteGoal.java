@@ -1,4 +1,4 @@
-package io.github.witherdoggie.rpt.render.entity.goal;
+package io.github.witherdoggie.rpt.entity.goal;
 
 import io.github.witherdoggie.rpt.accessors.ChickenEntityInterface;
 import net.minecraft.entity.LivingEntity;

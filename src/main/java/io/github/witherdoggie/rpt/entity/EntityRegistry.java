@@ -15,6 +15,8 @@ public class EntityRegistry{
     public static EntityType<BlobEntity> BLOB = FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, BlobEntity:: new).dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build();
     public static EntityType<AngryPotatoEntity> ANGRY_POTATO = FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, AngryPotatoEntity:: new).dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build();
     public static EntityType<KingBlobEntity> KING_BLOB = FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, KingBlobEntity:: new).dimensions(EntityDimensions.fixed(1.0f, 1.0f)).build();
+    public static EntityType<ChickeneerEntity> CHICKENEER = FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ChickeneerEntity:: new).dimensions(EntityDimensions.fixed(0.6f, 1.8f)).build();
+    public static EntityType<SkeletinEntity> SKELETIN = FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SkeletinEntity:: new).dimensions(EntityDimensions.fixed(0.6f, 1.8f)).build();
 
     public static void registerEntities(){
 
@@ -27,5 +29,10 @@ public class EntityRegistry{
         Registry.register(Registry.ENTITY_TYPE, new Identifier(RandomPointlessThings.MODID, "king_blob"), KING_BLOB);
         FabricDefaultAttributeRegistry.register(KING_BLOB, KingBlobEntity.createKingBlobAttributes());
 
+        Registry.register(Registry.ENTITY_TYPE, new Identifier(RandomPointlessThings.MODID, "chickeneer"), CHICKENEER);
+        FabricDefaultAttributeRegistry.register(CHICKENEER, ChickeneerEntity.createChickeneerAttributes());
+
+        Registry.register(Registry.ENTITY_TYPE, new Identifier(RandomPointlessThings.MODID, "skeletin"), SKELETIN);
+        FabricDefaultAttributeRegistry.register(SKELETIN, SkeletinEntity.createSkeletinAttributes());
     }
 }
