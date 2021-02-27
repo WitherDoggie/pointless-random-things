@@ -34,7 +34,7 @@ Planned Features:
 
 Requires GeckoLib: https://www.curseforge.com/minecraft/mc-mods/geckolib-fabric
 
-#F.A.Q:
+## F.A.Q:
 
 Will you release a forge version?  
 - No
